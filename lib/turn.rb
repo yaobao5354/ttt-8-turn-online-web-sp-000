@@ -19,8 +19,9 @@ end
 end
 
 def move(board, index, value = "X")
-  board[index] = value 
-  return board
+  if valid_move?(board,index) == true
+    board[index] = value 
+    return board
 end
 
 def position_taken?(board, index)
