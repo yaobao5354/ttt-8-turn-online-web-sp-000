@@ -19,7 +19,6 @@ end
 end
 
 def move(board, index, value = "X")
-  if valid_move?(board,index) == true
     board[index] = value 
     return board
   end 
@@ -34,8 +33,9 @@ def turn(board)
   input = gets.strip
   index = input_to_index(input)
   if valid_move?(board, index) == true
-  move(board, index, value = "X")
-  display_board(board)
+    if valid_move?(board, index) == true 
+    move(board, index, value = "X")
+    display_board(board)
   else 
   turn(board)
 end
